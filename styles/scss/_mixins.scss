@@ -1,0 +1,39 @@
+@mixin overal {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@mixin fontStyle($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin resposive($size) {
+    @if($size == M){
+        @media(max-width: 768px){
+            @content;
+        }
+    }
+    @else if($size ==L){
+        @media(min-width:769px)and(max-width: 1200px){
+            @content;
+        }
+    }
+}
+
+@mixin bodystyle {
+    background-color: $secondaryColor;
+    height: 600px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin cart {
+    box-shadow: 0 4px 4px 0px #0000001a;
+    border-radius: 10px;
+    overflow: hidden;
+}
